@@ -44,9 +44,9 @@ function App() {
       <NavbarComponent cartItemCount={cart.length} />
       <div className="container mt-4">
         <Routes>
-          <Route path="/mi-tienda/" element={<HomePage />} />
+          <Route path="/mi-tienda" element={<HomePage />} />
           <Route
-            path="/mi-tienda/catalogo"
+            path="/catalogo"
             element={
               <CatalogoPage
                 videojuegos={videojuegos}
@@ -56,7 +56,7 @@ function App() {
             }
           />
           <Route
-            path="/mi-tienda/carrito"
+            path="/carrito"
             element={
               <CarritoPage
                 cart={cart}

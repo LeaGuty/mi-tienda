@@ -8,7 +8,7 @@ const NavbarComponent = ({ cartItemCount }) => {
   return (
     <Navbar bg="dark" variant="dark" expand="lg" className="sticky-top">
       <Container>
-        <Navbar.Brand as={Link} to="/">
+        <Navbar.Brand as={Link} to="/mi-tienda">
           GameStore
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
