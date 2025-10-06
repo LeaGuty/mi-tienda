@@ -5,5 +5,5 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   // Esta línea es la que soluciona el problema.
-  //base: '/' 
+  base: '/mi-tienda/' 
 })
