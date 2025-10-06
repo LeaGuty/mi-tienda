@@ -9,7 +9,7 @@ const HomePage = () => {
         title="GameStore"
         subtitle="Encuentra los mejores videojuegos para todas las plataformas."
         buttonText="Ver Catálogo"
-        buttonLink="/catalogo"
+        buttonLink="/mi-tienda/catalogo"
       />
 
       <div className="container text-center my-5">
