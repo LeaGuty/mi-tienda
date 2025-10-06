@@ -14,11 +14,11 @@ const NavbarComponent = ({ cartItemCount }) => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link as={Link} to="/catalogo">
+            <Nav.Link as={Link} to="/mi-tienda/catalogo">
               Catálogo
             </Nav.Link>
           </Nav>
-          <Button as={Link} to="/carrito" variant="outline-light">
+          <Button as={Link} to="/mi-tienda/carrito" variant="outline-light">
             Carrito ({cartItemCount})
           </Button>
         </Navbar.Collapse>
