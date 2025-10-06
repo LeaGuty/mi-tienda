@@ -14,11 +14,7 @@ Puedes ver el proyecto desplegado y funcionando en el siguiente enlace:
 
 ---
 
-## 📸 Captura de Pantalla
 
-![Captura de pantalla de la página de inicio de la tienda de videojuegos](https://imgur.com/doqyGB6)
-
----
 
 ## ✨ Características Principales
 
