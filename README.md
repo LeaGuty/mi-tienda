@@ -16,9 +16,7 @@ Puedes ver el proyecto desplegado y funcionando en el siguiente enlace:
 
 ## 📸 Captura de Pantalla
 
-![Captura de pantalla de la página de inicio de la tienda de videojuegos]([https://i.imgur.com/tu_enlace_a_la_imagen.png](https://imgur.com/doqyGB6))
-
-*(Instrucción: Sube una de tus capturas de pantalla a un sitio como [Imgur](https://imgur.com/upload) y reemplaza el enlace de arriba por el tuyo).*
+![Captura de pantalla de la página de inicio de la tienda de videojuegos](https://imgur.com/doqyGB6)
 
 ---
 
