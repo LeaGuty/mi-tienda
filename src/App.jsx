@@ -7,6 +7,7 @@ import NavbarComponent from './components/NavbarComponent';
 import HomePage from './pages/HomePage';
 import CatalogoPage from './pages/CatalogoPage';
 import CarritoPage from './pages/CarritoPage';
+import ContactPage from './pages/ContactPage'; // <-- 1. Importa la nueva página
 import './App.css';
 
 // Componente principal que funciona como el cerebro de la aplicación.
@@ -80,6 +81,8 @@ function App() {
               />
             }
           />
+          {/* Ruta para la página de contacto. */}
+          <Route path="/mi-tienda/contacto" element={<ContactPage />} />
         </Routes>
       </div>
     </BrowserRouter>

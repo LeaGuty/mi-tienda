@@ -24,6 +24,9 @@ const NavbarComponent = ({ cartItemCount }) => {
             <Nav.Link as={Link} to="/mi-tienda/catalogo">
               Catálogo
             </Nav.Link>
+            <Nav.Link as={Link} to="/mi-tienda/contacto">
+              Contacto
+            </Nav.Link>
           </Nav>
           <Button as={Link} to="/mi-tienda/carrito" variant="outline-light">
             {/* Muestra el contador de items del carrito. */}
