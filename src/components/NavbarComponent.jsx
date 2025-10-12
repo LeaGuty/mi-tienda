@@ -15,7 +15,7 @@ const NavbarComponent = ({ cartItemCount }) => {
       <Container>
         {/* El prop 'as={Link}' integra React-Bootstrap con React Router. */}
         {/* La ruta 'to' debe coincidir con las rutas definidas en App.jsx. */}
-        <Navbar.Brand as={Link} to="/mi-tienda">
+        <Navbar.Brand as={Link} to="/mi-tienda/">
           GameStore
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

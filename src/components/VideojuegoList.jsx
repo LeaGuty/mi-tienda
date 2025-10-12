@@ -25,7 +25,7 @@ const VideojuegoList = ({ videojuegos, cart, onAddToCart }) => {
               <Card.Img variant="top" src={game.background_image} style={{ height: '200px', objectFit: 'cover' }} />
               <Card.Body className="d-flex flex-column">
                 <Card.Title>{game.name}</Card.Title>
-                <Card.Text className="text-secondary small mb-2">
+                <Card.Text className="text-secondary small mb-2 text-start">
                   Categorías:
                 </Card.Text>
                 <div className="d-flex flex-wrap gap-2 mb-3">

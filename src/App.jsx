@@ -68,7 +68,7 @@ function App() {
 
   // Función para eliminar un juego del carrito.
   const handleRemoveFromCart = (gameId) => {
-    setCart(cart.filter((game) => game.id !== gameId));
+    setCart(cart.filter((game) => game.id !== gameId)); 
   };
 
   // Renderiza la estructura de la aplicación, incluyendo el router y las páginas.
@@ -80,7 +80,7 @@ function App() {
         {/* Routes define las diferentes "páginas" de la aplicación. */}
         <Routes>
           {/* Ruta para la página de inicio. */}
-          <Route path="/mi-tienda" element={<HomePage />} />
+          <Route path="/mi-tienda/" element={<HomePage />} />
           {/* Ruta para la página del catálogo. */}
           <Route
             path="/mi-tienda/catalogo"

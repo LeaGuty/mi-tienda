@@ -17,7 +17,7 @@ const CatalogoPage = ({ videojuegos, cart, onAddToCart, categories = [] }) => {
 
   // Se crea una nueva lista filtrada en tiempo real según el término de búsqueda.
   // La búsqueda ignora si el texto está en mayúsculas o minúsculas.
-  const filteredVideojuegos = videojuegos.filter((game) => {
+  const filteredVideojuegos = videojuegos.filter((game) => {{}
     const matchesSearch = game.name.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesCategory =
       selectedCategory === 'Todas' ||
