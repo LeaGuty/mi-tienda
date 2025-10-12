@@ -1,45 +1,54 @@
-# 🎮 Mi Tienda de Videojuegos con React
+# 🎮 GameStore: Proyecto de E-commerce con React
 
-Este proyecto es una aplicación web de e-commerce para una tienda de videojuegos, desarrollada como parte de la evaluación sumativa para la asignatura **Desarrollo Frontend I (PFY2201)** de Duoc UC.
-
-La aplicación permite a los usuarios ver un catálogo de juegos cargado desde una API externa, buscar títulos específicos, y simular la acción de agregar y quitar productos de un carrito de compras.
+Proyecto final para la asignatura **Desarrollo Frontend I (PFY2201)** de Duoc UC. GameStore es una aplicación web de página única (SPA) que simula una tienda de videojuegos, implementando funcionalidades clave del desarrollo frontend moderno con React.
 
 ---
 
-## 🚀 Demostración en Vivo
+## 🚀 Despliegue en Vivo
 
-Puedes ver el proyecto desplegado y funcionando en el siguiente enlace:
+La aplicación está desplegada en GitHub Pages y se puede acceder a través del siguiente enlace:
 
 **[https://leaguty.github.io/mi-tienda/](https://leaguty.github.io/mi-tienda/)**
 
 ---
 
+## ✨ Funcionalidades Implementadas
 
+La aplicación cuenta con una arquitectura basada en componentes y un manejo de estado centralizado, ofreciendo las siguientes características:
 
-## ✨ Características Principales
-
-* **Catálogo Dinámico:** Los videojuegos se cargan desde la API externa de [RAWG](https://rawg.io/).
-* **Navegación SPA:** Uso de **React Router** para una experiencia de navegación fluida entre las páginas de Inicio, Catálogo y Carrito sin recargar la página.
-* **Buscador en Tiempo Real:** Filtra los videojuegos en el catálogo a medida que el usuario escribe.
-* **Gestión de Carrito:** Funcionalidad para agregar y eliminar productos del carrito, con actualización del contador en tiempo real.
-* **Renderizado Condicional:** La interfaz se adapta al estado de la aplicación, mostrando mensajes de "carrito vacío" o cambiando el estilo de los botones.
-* **Diseño Responsivo:** Interfaz construida con **React-Bootstrap** para una correcta visualización en dispositivos de escritorio y móviles.
-
----
-
-## 🛠️ Tecnologías Utilizadas
-
-* **[React](https://reactjs.org/)**: Librería principal para la construcción de la interfaz de usuario.
-* **[Vite](https://vitejs.dev/)**: Herramienta de frontend para un entorno de desarrollo rápido.
-* **[React Router](https://reactrouter.com/)**: Para la gestión de rutas en la aplicación.
-* **[Bootstrap](https://getbootstrap.com/)** y **[React-Bootstrap](https://react-bootstrap.github.io/)**: Para el diseño y los componentes de la interfaz.
-* **[RAWG API](https://rawg.io/apidocs)**: Como fuente de datos para el catálogo de videojuegos.
+* **Navegación Fluida:** Sistema de enrutamiento del lado del cliente implementado con **React Router**, permitiendo la navegación entre las páginas de Inicio, Catálogo, Carrito y Contacto sin recargar la página.
+* **Catálogo Dinámico desde API:** Los videojuegos se cargan asincrónicamente desde la API externa de **RAWG** al iniciar la aplicación, utilizando `useEffect` para manejar el efecto secundario.
+* **Filtrado Avanzado en Catálogo:**
+    * **Buscador por Nombre:** Filtra los juegos en tiempo real a medida que el usuario escribe.
+    * **Filtro por Categorías:** Genera dinámicamente una lista de categorías a partir de los datos de la API y permite filtrar el catálogo.
+* **Gestión de Carrito de Compras:**
+    * Permite agregar y eliminar productos del carrito.
+    * El estado del carrito es gestionado centralmente con `useState` y se actualiza en tiempo real.
+    * El contador de ítems en la barra de navegación se actualiza instantáneamente.
+* **Renderizado Condicional:** La interfaz se adapta para mejorar la experiencia de usuario:
+    * Muestra un mensaje cuando el carrito está vacío.
+    * El botón "Agregar al carrito" cambia su texto, color y estado a "En el carrito" cuando un producto ya ha sido agregado.
+* **Formulario de Contacto:** Una página de contacto con un formulario controlado por el estado de React, con validación básica y feedback visual al usuario tras el envío.
+* **Diseño Responsivo:** La interfaz está construida con componentes de **React-Bootstrap**, asegurando una correcta visualización en diferentes tamaños de pantalla.
 
 ---
 
-## ⚙️ Instalación y Puesta en Marcha Local
+## 🛠️ Tecnologías y Librerías
 
-Si deseas ejecutar este proyecto en tu propio computador, sigue estos pasos:
+* **React (v19)**: Librería principal para la construcción de la interfaz de usuario.
+    * **Hooks**: `useState`, `useEffect`, `useMemo` para el manejo de estado, efectos secundarios y optimización.
+* **Vite**: Herramienta de frontend para un entorno de desarrollo rápido y compilación optimizada.
+* **React Router DOM**: Para la gestión de rutas y navegación en la Single Page Application.
+* **React-Bootstrap**: Librería de componentes para un diseño rápido y responsivo basado en Bootstrap.
+* **RAWG API**: Como fuente de datos externa para el catálogo de videojuegos.
+* **Git y GitHub**: Para el control de versiones.
+* **GitHub Pages**: Para el despliegue y publicación de la aplicación.
+
+---
+
+## ⚙️ Cómo Ejecutar el Proyecto en Local
+
+Para clonar y ejecutar este proyecto en tu propio entorno de desarrollo, sigue estos pasos:
 
 1.  **Clona el repositorio:**
     ```bash
@@ -51,30 +60,28 @@ Si deseas ejecutar este proyecto en tu propio computador, sigue estos pasos:
     cd mi-tienda
     ```
 
-3.  **Instala las dependencias:**
+3.  **Instala las dependencias del proyecto:**
     ```bash
     npm install
     ```
 
-4.  **Configura tu API Key:**
-    * Crea un archivo llamado `.env` en la raíz del proyecto.
-    * Añade la siguiente línea, reemplazando `TU_API_KEY` con tu clave personal de [RAWG](https://rawg.io/apikey):
-        ```
-        VITE_API_KEY=TU_API_KEY
-        ```
-    * **Importante:** Asegúrate de que el archivo `.gitignore` contenga la línea `.env` para no subir tus claves secretas a GitHub.
+4.  **Configura tu clave de API:**
+    * Este proyecto requiere una clave de la API de [RAWG](https://rawg.io/apikey).
+    * En la raíz del proyecto, el archivo `src/App.jsx` contiene la clave de API. Para una mejor práctica, se recomienda moverla a un archivo de entorno.
 
 5.  **Inicia el servidor de desarrollo:**
     ```bash
     npm run dev
     ```
-    La aplicación estará disponible en `http://localhost:5173`.
+    La aplicación se abrirá automáticamente en `http://localhost:5173`.
 
 ---
 
-## 🌐 Despliegue
+## 🌐 Proceso de Despliegue
 
-Este proyecto está desplegado en GitHub Pages. El despliegue se realiza automáticamente al ejecutar el siguiente comando, que compila la aplicación y la publica en la rama `gh-pages`:
+Este proyecto utiliza `gh-pages` para el despliegue automático en GitHub Pages.
+
+El proceso se inicia ejecutando el siguiente comando, que compila la aplicación en la carpeta `dist` y la publica en la rama `gh-pages` del repositorio:
 
 ```bash
 npm run deploy
