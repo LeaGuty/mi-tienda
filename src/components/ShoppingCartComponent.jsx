@@ -8,8 +8,10 @@ import { ListGroup, Button } from 'react-bootstrap';
 
 // Recibe el 'cart' y la función 'onRemoveFromCart' desde el componente padre (App.jsx).
 const ShoppingCartComponent = ({ cart, onRemoveFromCart }) => {
-  // Calcula el total sumando un precio simulado por cada item en el carrito.
-  const total = cart.reduce((sum, item) => sum + 49.99, 0).toFixed(2);
+  // Calcula el total sumando el precio real de cada juego (default 0 si falta).
+  const total = cart
+    .reduce((sum, item) => sum + (Number(item.price) || 0), 0)
+    .toFixed(2);
 
   return (
     <div>
@@ -23,7 +25,12 @@ const ShoppingCartComponent = ({ cart, onRemoveFromCart }) => {
         <ListGroup>
           {cart.map(game => (
             <ListGroup.Item key={game.id} className="d-flex justify-content-between align-items-center">
-              {game.name}
+              <span>
+                {game.name}
+                <span className="text-muted ms-2">
+                  (${(Number(game.price) || 0).toFixed(2)})
+                </span>
+              </span>
               {/* Al hacer clic, se ejecuta la función para eliminar, usando el id del juego. */}
               <Button variant="danger" size="sm" onClick={() => onRemoveFromCart(game.id)}>Eliminar</Button>
             </ListGroup.Item>

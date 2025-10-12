@@ -1,7 +1,7 @@
 // src/App.jsx
 
 // Importa las herramientas necesarias de React y las librerías.
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavbarComponent from './components/NavbarComponent';
 import HomePage from './pages/HomePage';
@@ -27,8 +27,18 @@ function App() {
       try {
         const response = await fetch(url);
         const data = await response.json();
-        // Actualiza el estado con los videojuegos recibidos.
-        setVideojuegos(data.results || []);
+        // Prepara precios simulados y categorías legibles.
+        const priceOptions = [19.99, 24.99, 29.99, 39.99, 49.99, 59.99];
+        const juegosConDetalles = (data.results || []).map((game, index) => ({
+          ...game,
+          price: priceOptions[index % priceOptions.length],
+          categories:
+            game.genres && game.genres.length > 0
+              ? game.genres.map((genre) => genre.name)
+              : ['Sin categoría'],
+        }));
+        // Actualiza el estado con los videojuegos enriquecidos.
+        setVideojuegos(juegosConDetalles);
       } catch (error) {
         console.error('Error al cargar los videojuegos:', error);
       }
@@ -36,6 +46,17 @@ function App() {
 
     fetchVideojuegos();
   }, []); // El array vacío [] hace que este efecto se ejecute solo una vez.
+
+  // Lista de categorias unicas derivadas de los videojuegos cargados.
+  const categoriasDisponibles = useMemo(() => {
+    const setCategorias = new Set();
+    videojuegos.forEach((game) => {
+      if (Array.isArray(game.categories)) {
+        game.categories.forEach((categoria) => setCategorias.add(categoria));
+      }
+    });
+    return Array.from(setCategorias).sort();
+  }, [videojuegos]);
 
   // Función para agregar un juego al carrito.
   const handleAddToCart = (gameToAdd) => {
@@ -68,6 +89,7 @@ function App() {
                 videojuegos={videojuegos}
                 cart={cart}
                 onAddToCart={handleAddToCart}
+                categories={categoriasDisponibles}
               />
             }
           />
@@ -91,3 +113,4 @@ function App() {
 
 // Exporta el componente App para ser usado en main.jsx.
 export default App;
+
